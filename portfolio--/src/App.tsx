@@ -1,7 +1,12 @@
+import {Routes, Route} from 'react-router-dom'
+import ProjectDetail from './pages/ProjectDetail'
+import ProjectCard from './components/ProjectCard'
 import "./App.css"
 
 function App() {
   return(
+    <Routes>
+      <Route path='/' element={
     <>
     {/* Navigation */}
     <header className="navbar">
@@ -30,7 +35,13 @@ function App() {
         </div>
       </div>
 
-      <span className="scroll-hint">Scroll</span>
+      <span className="scroll-hint" 
+      onClick={()=>{
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      }}>Scroll ↓</span>
     </section>
 
     {/* About Section */}
@@ -46,58 +57,25 @@ function App() {
       <div className="container">
         <h3>Projects</h3>
         <div className="project-grid">
-          <div className="project-card">
-            <div className="project-image kuddles"></div>
-            <div className="project-content">
-              <h4>Kuddles</h4>
-              <p>A mobile application that connect parents and nanny with their children's daily activities</p>
+          <ProjectCard 
+          title='Kuddles'
+          description='A mobile app connecting parents and nannies'
+          slug='kuddles'/>
+          
+          <ProjectCard
+          title='CityNest'
+          description='A web app for searching and filtering properties'
+          slug='CityNest'/>
 
-              <div className="project-tags">
-                <span>React Native</span>
-                <span>Node.js</span>
-                <span>Firebase</span>
-                <span>MongoDB</span>
-              </div>
-            </div>
-          </div>
+          <ProjectCard
+          title='Good Health and Well-being'
+          description='A website about the UN SDGS goal "Good Health and Well-being" to promote about health communities and healthy lifecycle'
+          slug='GoodHealthandWellbeing'/>
 
-          <div className="project-card">
-            <div className="project-image CityNest"></div>
-            <div className="project-content">
-              <h4>CityNest Properties</h4>
-              <p>A estate agent web application that allows user to search and filter properties</p>
-
-              <div className="project-tags">
-                <span>React Native</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-card">
-            <div className="project-image GoodHealth"></div>
-            <div className="project-content">
-              <h4>Good Health and Well-being</h4>
-              <p>A website about the UN SDGS goal "Good Health and Well-being" to promote about health communities and healthy lifecycle</p>
-
-              <div className="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-card">
-            <div className="project-image portfolio"></div>
-            <div className="project-content">
-              <h4>Personal Portfolio</h4>
-              <p>Personal portfolio website about myself, project that have done, and skills in a clean and responsive web design</p>
-
-              <div className="project-tags">
-                <span>React Native - Typescript</span>
-                <span>CSS</span>
-              </div>
-          </div>
-        </div>
+          <ProjectCard
+          title='Personal Portfolio'
+          description='Personal portfolio website about myself, project that have done, and skills in a clean and responsive web design'
+          slug='Portfolio'/>
       </div>
       </div>
     </section>
@@ -139,7 +117,12 @@ function App() {
       </div>
     </footer>
     </>
-  )
+    
+  }
+  />
+    <Route path='/projects/:slug' element={<ProjectDetail />} />
+    </Routes>
+  );
 }
 
 export default App
