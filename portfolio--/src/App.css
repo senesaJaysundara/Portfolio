@@ -1,3 +1,11 @@
+:root{
+  --bg: #0b0b0f;
+  --surface: rgba(255, 255, 255, 0.05);
+  --primary: #7c7cff;
+  --primary-soft: #a5a5ff;
+  --text-main: #ffffff;
+  --text-muted: #b5b5b5;
+}
 .navbar{
   position: fixed;
   top: 0;
@@ -54,8 +62,6 @@
 }
 .hero-name{
   font-size: clamp(3rem, 7vw, 5rem);
-  /* font-weight: 700;
-  line-height: 1.05; */
   margin: 1rem;
   background: linear-gradient(90deg, #ffffff, var(--accent));
   -webkit-background-clip: text;
@@ -147,18 +153,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  /* margin-top: 2rem; */
 }
 .project-card{
   background: rgba(255, 255, 255, 0.05);
-  /* padding: 2rem; */
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* min-height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
   color: #aaa;
 }
 .project-card:hover{
@@ -168,8 +168,6 @@
 .project-image{
   background: linear-gradient(135deg, #7c7cff, #a5a5ff);
   height: 180px;
-  /* border-radius: 6px;
-  margin-bottom: 1rem; */
 }
 .project-content{
   padding: 1.5rem;
@@ -193,6 +191,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
 }
+
 .skills-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -208,3 +207,39 @@
   font-size: 1rem;
 }
 
+.contact{
+  margin-top: 8rem;
+}
+.contact-box{
+  background: linear-gradient(135deg, rgba(124,124,255,0.15), rgba(124,124,255,0.05));
+  border-radius: 24px;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.contact-box h3{
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.contact-box p{
+  max-width: 520px;
+  margin: 0 auto;
+  color: #bbb;
+}
+.contact-actions{
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer{
+  margin-top: 6rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-content{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #777;
+}

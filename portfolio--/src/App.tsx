@@ -102,6 +102,7 @@ function App() {
       </div>
     </section>
 
+    {/* Skills */}
     <section className="section skills" id="skills">
       <div className="container">
         <h3>Skills</h3>
@@ -116,6 +117,27 @@ function App() {
         </ul>
       </div>
     </section>
+
+    {/* Contact Section */}
+    <section className="section contact" id="contact">
+      <div className="container contact-box">
+        <h3>Let's work together</h3>
+
+        <div className="contact-actions">
+          <a href="mailto:senesajay11@gmail.com" className="btn primary">Email</a>
+          <a href="https://github.com/senesaJaysundara" className="btn ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/senesa-jayasundara-9174a6333" className="btn ghost">LinkdeIn</a>
+        </div>
+      </div>
+    </section>
+
+    {/* Footer */}
+    <footer className="footer">
+      <div className="container footer-content">
+        <p>&copy; {new Date().getFullYear()} Senesa Jayasundara</p>
+        <span>Designed & built with React</span>
+      </div>
+    </footer>
     </>
   )
 }
