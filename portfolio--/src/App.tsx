@@ -60,22 +60,26 @@ function App() {
           <ProjectCard 
           title='Kuddles'
           description='A mobile app connecting parents and nannies'
-          slug='kuddles'/>
+          slug='kuddles'
+          image='/images/Kuddles.jpg'/>
           
           <ProjectCard
           title='CityNest'
           description='A web app for searching and filtering properties'
-          slug='CityNest'/>
+          slug='CityNest'
+          image='/images/citynest.png'/>
 
           <ProjectCard
           title='Good Health and Well-being'
           description='A website about the UN SDGS goal "Good Health and Well-being" to promote about health communities and healthy lifecycle'
-          slug='GoodHealthandWellbeing'/>
+          slug='GoodHealthandWellbeing'
+          image='/images/good-health.png'/>
 
           <ProjectCard
           title='Personal Portfolio'
           description='Personal portfolio website about myself, project that have done, and skills in a clean and responsive web design'
-          slug='Portfolio'/>
+          slug='Portfolio'
+          image=''/>
       </div>
       </div>
     </section>

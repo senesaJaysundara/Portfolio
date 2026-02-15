@@ -7,6 +7,11 @@ const projects = {
         tech: ["React Native - Typesript", "Node.js", "Firebase","MongoDB"],
         problem: "Parents oftern struggles to find a reliable nanny for their children, and they also want to stay updated with their children's daily activities. On the other hand, nannies also want to have a platform to connect with parents and manage their work more efficiently.",
         solution: "Designs a mobile application with a user friendly interface and real-time updates with clear activity tracking",
+        heroImage: "/images/Kuddles.jpg",
+        screenshots: [
+            "/images/Kuddles poster.jpg",
+            "/images/Kuddles-UI.jpeg",
+        ]
     },
     CityNest: {
         title: "CityNest",
@@ -14,6 +19,11 @@ const projects = {
         tech: ["React Native- JavaScript"],
         problem: "People struggles to find a reliable platform to search for properties that match their preferences, and they also want to have a user-friendly interface to easily navigate through the listings.",
         solution: "Designs a web application with a user friendly interface that search and filter the properties",
+        heroImage: "/images/citynest.png",
+        screenshots: [
+            "/images/citynest-properties.png",
+            "/images/citynest-property-details.png",
+        ]
     },
     GoodHealthandWellbeing: {
         title: "Good Health and Well-being",
@@ -21,6 +31,11 @@ const projects = {
         tech: ["HTML","CSS"],
         problem: "Many people are not aware of the importance of good health and well-being, and they also lack access to reliable information about how to maintain a healthy lifestyle.",
         solution: "Designs a web application with a user friendly interface that promotes health and well-being information",
+        heroImage: "/images/good-health.png",
+        screenshots:[
+            "/images/good-health-splash.png",
+            "/images/good health page.png",
+        ]
     },
     Portfolio: {
         title: "Personal Portfolio",
@@ -28,6 +43,10 @@ const projects = {
         tech: ["React - TypeScript"],
         problem: "Need a professional portfolio to showcase projects and skills effectively.",
         solution: "Designs a responsive and visually appealing portfolio website with clear navigation and project details.",
+        heroImage: "",
+        screenshots:[
+
+        ]
     },
 };
 
@@ -39,17 +58,25 @@ function ProjectDetail() {
     return(
         <section className='project-detail'>
             <div className='container'>
+                <div className='project-hero'>
+                    <img src={project.heroImage} alt={project.title}/>
+                </div>
                 <h1>{project.title}</h1>
                 <p className="project-overview">{project.overview}</p>
 
                 <div className='project-meta'>
                     <div>
                         <h4>Technologies:</h4>
-                        <ul>
+                        <div className='techno'>
+                            {project.tech.map((t)=>(
+                                <span key={t}>{t}</span>
+                            ))}
+                        </div>
+                        {/* <ul>
                             {project.tech.map((t)=>(
                                 <li key={t}>{t}</li>
                             ))}
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
 
@@ -62,6 +89,17 @@ function ProjectDetail() {
                     <h3>Solution</h3>
                     <p>{project.solution}</p>
                 </div>
+
+                {project.screenshots && (
+                    <div className='project-section'>
+                        <h3>Project Pictures</h3>
+                        <div className='project-gallery'>
+                            {project.screenshots.map((img)=>(
+                                <img key={img} src={img} alt='Project pictures'/>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );
