@@ -10,7 +10,7 @@ function App() {
     <>
     {/* Navigation */}
     <header className="navbar">
-      <div className="container nav-content">
+      <div className="nav-container">
         <span className="logo">Senesa</span>
 
         <nav className="nav-links">
@@ -48,7 +48,7 @@ function App() {
     <section className="about" id="about">
       <div className="container about-grid">
         <h2 className="section-title">About</h2>
-        <p>I'm a computer science student who as an interest in building clean and responsive interfaces and web applications. Also in data analysis which I learn everyday by myself</p>
+        <p>I'm a computer science student who has an interest in building clean and responsive interfaces and web applications. Also in data analysis which I learn everyday by myself</p>
       </div>
     </section>
 
@@ -108,7 +108,7 @@ function App() {
         <div className="contact-actions">
           <a href="mailto:senesajay11@gmail.com" className="btn primary">Email</a>
           <a href="https://github.com/senesaJaysundara" className="btn ghost">GitHub</a>
-          <a href="https://www.linkedin.com/in/senesa-jayasundara-9174a6333" className="btn ghost">LinkdeIn</a>
+          <a href="https://www.linkedin.com/in/senesa-jayasundara-9174a6333" className="btn ghost">LinkedIn</a>
         </div>
       </div>
     </section>
