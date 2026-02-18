@@ -75,11 +75,11 @@ function App() {
           slug='GoodHealthandWellbeing'
           image='/images/good-health.png'/>
 
-          <ProjectCard
+          {/* <ProjectCard
           title='Personal Portfolio'
           description='Personal portfolio website about myself, project that have done, and skills in a clean and responsive web design'
           slug='Portfolio'
-          image=''/>
+          image=''/> */}
       </div>
       </div>
     </section>

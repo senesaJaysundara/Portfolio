@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
 const projects = {
     kuddles: {
@@ -34,30 +34,36 @@ const projects = {
         heroImage: "/images/good-health.png",
         screenshots:[
             "/images/good-health-splash.png",
-            "/images/good health page.png",
+            "/images/good-health-page.png",
         ]
     },
-    Portfolio: {
-        title: "Personal Portfolio",
-        overview: "A personal portfolio website showcasing projects and skills",
-        tech: ["React - TypeScript"],
-        problem: "Need a professional portfolio to showcase projects and skills effectively.",
-        solution: "Designs a responsive and visually appealing portfolio website with clear navigation and project details.",
-        heroImage: "",
-        screenshots:[
+    // Portfolio: {
+    //     title: "Personal Portfolio",
+    //     overview: "A personal portfolio website showcasing projects and skills",
+    //     tech: ["React - TypeScript"],
+    //     problem: "Need a professional portfolio to showcase projects and skills effectively.",
+    //     solution: "Designs a responsive and visually appealing portfolio website with clear navigation and project details.",
+    //     heroImage: "",
+    //     screenshots:[
 
-        ]
-    },
+    //     ]
+    // },
 };
 
 function ProjectDetail() {
     const { slug } = useParams();
+    const navigate = useNavigate();
     const project = projects[slug as keyof typeof projects];
     if (!project) return <p>Project not found</p>;
 
     return(
         <section className='project-detail'>
             <div className='container'>
+
+                {/* Back button */}
+                <button className='back-btn' onClick={() => navigate('/')}>
+                    ← Back to homepage
+                </button>
                 <div className='project-hero'>
                     <img src={project.heroImage} alt={project.title}/>
                 </div>
