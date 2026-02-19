@@ -1,10 +1,11 @@
 :root{
-  --bg: #0b0b0f;
-  --surface: rgba(255, 255, 255, 0.05);
-  --primary: #7c7cff;
-  --primary-soft: #a5a5ff;
-  --text-main: #ffffff;
-  --text-muted: #b5b5b5;
+  --bg: #030712;
+  --surface: rgba(15, 23, 42, 0.6);
+  --primary: #38bdf8;
+  --primary-soft: #7dd3fc;
+  --accent-glow: rgba(56, 189, 248, 0.15);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
 }
 /* Navigation Bar */
 .navbar{
@@ -131,18 +132,16 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--primary);
+  font-weight: 700;
 }
 .hero-name{
-  font-size: clamp(3rem, 7vw, 5rem);
-  margin: 1rem;
-  background: linear-gradient(90deg, #ffffff, var(--primary));
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  margin: 0.5rem 0;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
   font-weight: 900;
   line-height: 0.9;
-  letter-spacing: -3px;
-  
+  letter-spacing: -4px; 
 }
 .hero-subtitle{
   font-size: 1.2rem;
@@ -189,18 +188,28 @@
 }
 
 .section{
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  padding: 3rem;
-  margin: 4rem auto;
-  max-width: 1100px;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: border-color 0.4s ease;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: 8rem auto;
+  padding: 4rem;
+  position: relative;
+}
+.section::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0.5;
 }
 .section:hover{
-  border-color: var(--primary-soft);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px var(--accent-glow);
 }
 .section-title{
   font-size: 2.5rem;
@@ -260,21 +269,16 @@
   gap: 2rem;
 }
 .project-card{
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  overflow: hidden;
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
-  transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
-  color: inherit;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-decoration: none;
-  display: block;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .project-card:hover{
-  transform: translateY(-12px) scale(1.02);
   border-color: var(--primary);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); 
+  box-shadow: 0 0 20px var(--accent-glow);
 }
  .project-image{
   background: #1a1a1f;
@@ -333,7 +337,6 @@
   object-fit: cover;
   border-radius: 20px;
   margin-bottom: 2rem;
-  /* display: block; */
 }
 .project-overview{
   max-width: 600px;
@@ -381,7 +384,6 @@
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.5rem 1.2rem;
-  /* border-radius: 999px; */
   background: rgba(124,124,255,0.1);
   border: 1px solid rgba(124,124,255,0.3);
   color: var(--primary-soft); 
@@ -425,6 +427,7 @@
   transform: translateY(-5px);
 }
 
+/*Skills*/
 .skills-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -433,37 +436,41 @@
   list-style: none;
 }
 .skills-grid li{
-  /* background: rgba(255, 255, 255, 0.06); */
-  background: rgba(124,124,255,0.05);
-  /* border: 1px solid rgba(255, 255, 255, 0.08); */
-  border: 1px solid rgba(124, 124, 255, 0.2);
-  color: #ddd;
-  font-weight: 500;
-  padding: 0.7rem 1.2rem;
-  text-align: center;
-  border-radius: 6px;
-  font-size: 1rem;
+  background: rgba(56, 189, 248, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--primary-soft);
+  font-family: 'Courier New',monospace;
+  font-size: 0.85rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 .skills-grid li:hover{
   background: var(--primary);
   color: #000;
-  transform: rotate(-2deg);
+  box-shadow: 0 0 15px var(--primary);
+  transform: translateY(-2px);
 }
 
-
+/*Contact*/
 .contact{
   margin-top: 8rem;
 }
 .contact-box{
-  background: linear-gradient(135deg, rgba(124,124,255,0.15), rgba(124,124,255,0.05));
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(3, 7, 18,0.9));
+  border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: 24px;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(56, 189, 248, 0.05);
 }
 .contact-box h3{
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  letter-spacing: -1px;
+  background: linear-gradient(to bottom, #fff, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .contact-box p{
   max-width: 520px;
@@ -476,17 +483,47 @@
   justify-content: center;
   gap: 1rem;
 }
+.contact-actions .btn.primary{
+  background: var(--primary);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+.contact-actions .btn.ghost{
+  border-color: rgba(56, 189, 248, 0.3);
+  color: var(--primary-soft);
+}
+.contact-actions .btn.ghost:hover{
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--primary);
+}
 
 .footer{
-  margin-top: 6rem;
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10rem;
+  padding: 4rem 0 2rem 0;
+  border-top: 1px solid rgba(56, 189, 248, 0.1);
+  border-top: 1px solid rgba(56, 189, 248, 0.1);
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.2));
 }
 .footer-content{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-family: 'Courier New', monospace;
   font-size: 0.75rem;
-  color: #777;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer-content span::before{
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0 0 10px var(--primary);
 }
 
 html{

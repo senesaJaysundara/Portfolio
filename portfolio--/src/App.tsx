@@ -116,8 +116,10 @@ function App() {
     {/* Footer */}
     <footer className="footer">
       <div className="container footer-content">
-        <p>&copy; {new Date().getFullYear()} Senesa Jayasundara</p>
-        <span>Designed & built with React</span>
+        <p>&copy; {new Date().getFullYear()} SENESA JAYASUNDARA</p>
+        <div className='footer-status'>
+          <span>SYSTEM ACTIVE // DESIGNED WITH REACT</span>
+        </div>
       </div>
     </footer>
     </>
