@@ -78,11 +78,6 @@ function ProjectDetail() {
                                 <span key={t}>{t}</span>
                             ))}
                         </div>
-                        {/* <ul>
-                            {project.tech.map((t)=>(
-                                <li key={t}>{t}</li>
-                            ))}
-                        </ul> */}
                     </div>
                 </div>
 

@@ -1,10 +1,43 @@
 import {Routes, Route} from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import ProjectDetail from './pages/ProjectDetail'
 import ProjectCard from './components/ProjectCard'
 import "./App.css"
 
 function App() {
+  const [showBtn, setShowBtn] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+    const handleScroll = () => {
+      if(window.scrollY > 1500){
+        setShowBtn(true);
+      } else {
+        setShowBtn(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    const timer = setTimeout(()=>{
+      setLoading(false);  
+    }, 1500);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+        clearTimeout(timer);
+    };
+  }, []);
   return(
+    <>
+    {loading && (
+      <div className='loader-screen'>
+        <div className='loader-content'>
+          <h1 className='loader-logo'>Senesa</h1>
+          <div className='loader-bar'></div>
+        </div>
+      </div>
+    )}
+   <div className={`main-content ${!loading ? 'fade-in' : ''}`}>
     <Routes>
       <Route path='/' element={
     <>
@@ -122,12 +155,20 @@ function App() {
         </div>
       </div>
     </footer>
+
+    {/* Back to up button */}
+    {showBtn &&(
+      <button
+      className='scroll-to-top'
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth'})}>↑</button>
+    )}
     </>
-    
   }
   />
     <Route path='/projects/:slug' element={<ProjectDetail />} />
     </Routes>
+    </div>
+    </>
   );
 }
 
