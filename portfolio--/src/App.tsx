@@ -108,11 +108,11 @@ function App() {
           slug='GoodHealthandWellbeing'
           image='/images/good-health.png'/>
 
-          {/* <ProjectCard
-          title='Personal Portfolio'
-          description='Personal portfolio website about myself, project that have done, and skills in a clean and responsive web design'
-          slug='Portfolio'
-          image=''/> */}
+          <ProjectCard
+          title='Sales Data Analysis'
+          description='Analysing sales data using Excel to uncover trends and business insights'
+          slug='SalesAnalytics'
+          image='/images/sales-dashboard.png'/> 
       </div>
       </div>
     </section>
@@ -129,6 +129,7 @@ function App() {
           <li>React</li>
           <li>SQL</li>
           <li>Figma</li>
+          <li>Microsoft Office</li>
         </ul>
       </div>
     </section>
@@ -139,7 +140,7 @@ function App() {
         <h3>Let's work together</h3>
 
         <div className="contact-actions">
-          <a href="mailto:senesajay11@gmail.com" className="btn primary">Email</a>
+          <a href="mailto:senesajayasundara@gmail.com" className="btn primary">Email</a>
           <a href="https://github.com/senesaJaysundara" className="btn ghost">GitHub</a>
           <a href="https://www.linkedin.com/in/senesa-jayasundara-9174a6333" className="btn ghost">LinkedIn</a>
         </div>

@@ -4,7 +4,7 @@ const projects = {
     kuddles: {
         title: "kuddles",
         overview: "A mobile application that connects both paernts and nannies, by updating child's activity in real time",
-        tech: ["React Native - Typesript", "Node.js", "Firebase","MongoDB"],
+        tech: ["React Native - typescript","Node.js","MongoDB","Firebase"],
         problem: "Parents oftern struggles to find a reliable nanny for their children, and they also want to stay updated with their children's daily activities. On the other hand, nannies also want to have a platform to connect with parents and manage their work more efficiently.",
         solution: "Designs a mobile application with a user friendly interface and real-time updates with clear activity tracking",
         heroImage: "/images/Kuddles.jpg",
@@ -37,17 +37,19 @@ const projects = {
             "/images/good-health-page.png",
         ]
     },
-    // Portfolio: {
-    //     title: "Personal Portfolio",
-    //     overview: "A personal portfolio website showcasing projects and skills",
-    //     tech: ["React - TypeScript"],
-    //     problem: "Need a professional portfolio to showcase projects and skills effectively.",
-    //     solution: "Designs a responsive and visually appealing portfolio website with clear navigation and project details.",
-    //     heroImage: "",
-    //     screenshots:[
-
-    //     ]
-    // },
+    SalesAnalytics: {
+        title: "Sales Data Analysis",
+        overview: "An Excel-based data analytics project analyzing sales performance to uncover trends, top-performing products, and regional insights.",
+        tech: ["Microsoft Excel","Pivot Tables","Data Cleaning","Data Visualization"],
+        problem: "Business often struggle to understand sales trends and identify top-performing products and regions due to unstructured data.",
+        solution: "Cleaned and analyzed sales data using Excel, created pivot tables and dashboards, and generated insights to support data-driven decision-making.",
+        heroImage: "/images/sales-dashboard.png",
+        screenshots:[
+            "/images/sales-chart1.png",
+            "/images/sales-chart2.png",
+            "/images/sales-chart3.png"
+        ]
+    },
 };
 
 function ProjectDetail() {
@@ -90,6 +92,28 @@ function ProjectDetail() {
                     <h3>Solution</h3>
                     <p>{project.solution}</p>
                 </div>
+
+                {slug === "SalesAnalytics" && (
+                    <div className='project-section'>
+                        <h3>Key Insights</h3>
+                        <ul>
+                            <li>Observed monthly sales trends and seasonal patterns</li>
+                            <li>Indetified top-performing products contributing the highest revenue</li>
+                            <li>Analyzed region-wise sales performance</li>
+                            <li>Generated insights to support business decision-making</li>
+                        </ul>
+                    </div>
+                )}
+
+                {slug == "SalesAnalytics" && (
+                    <div className='project-section report-download-section'>
+                        <h3>Project Documentation</h3>
+                        <a 
+                        href='/reports/DA Project Report.pdf'
+                        target='_blank'
+                        className='btn-primary'> View Full Analysis Report</a>
+                    </div>
+                )}
 
                 {project.screenshots && (
                     <div className='project-section'>
