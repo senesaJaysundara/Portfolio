@@ -7,10 +7,10 @@ const projects = {
         tech: ["React Native - typescript","Node.js","MongoDB","Firebase"],
         problem: "Parents oftern struggles to find a reliable nanny for their children, and they also want to stay updated with their children's daily activities. On the other hand, nannies also want to have a platform to connect with parents and manage their work more efficiently.",
         solution: "Designs a mobile application with a user friendly interface and real-time updates with clear activity tracking",
-        heroImage: "/images/Kuddles.jpg",
+        heroImage: "/Portfolio/images/Kuddles.jpg",
         screenshots: [
-            "/images/Kuddles poster.jpg",
-            "/images/Kuddles-UI.jpeg",
+            "/Portfolio/images/Kuddles-poster.jpg",
+            "/Portfolio/images/Kuddles-UI.jpeg",
         ]
     },
     CityNest: {
@@ -19,10 +19,10 @@ const projects = {
         tech: ["React Native- JavaScript"],
         problem: "People struggles to find a reliable platform to search for properties that match their preferences, and they also want to have a user-friendly interface to easily navigate through the listings.",
         solution: "Designs a web application with a user friendly interface that search and filter the properties",
-        heroImage: "/images/citynest.png",
+        heroImage: "/Portfolio/images/citynest.png",
         screenshots: [
-            "/images/citynest-properties.png",
-            "/images/citynest-property-details.png",
+            "/Portfolio/images/citynest-properties.png",
+            "/Portfolio/images/citynest-property-details.png",
         ]
     },
     GoodHealthandWellbeing: {
@@ -31,10 +31,10 @@ const projects = {
         tech: ["HTML","CSS"],
         problem: "Many people are not aware of the importance of good health and well-being, and they also lack access to reliable information about how to maintain a healthy lifestyle.",
         solution: "Designs a web application with a user friendly interface that promotes health and well-being information",
-        heroImage: "/images/good-health.png",
+        heroImage: "/Portfolio/images/good-health.png",
         screenshots:[
-            "/images/good-health-splash.png",
-            "/images/good-health-page.png",
+            "/Portfolio/images/good-health-splash.png",
+            "/Portfolio/images/good-health-page.png",
         ]
     },
     SalesAnalytics: {
@@ -43,11 +43,11 @@ const projects = {
         tech: ["Microsoft Excel","Pivot Tables","Data Cleaning","Data Visualization"],
         problem: "Business often struggle to understand sales trends and identify top-performing products and regions due to unstructured data.",
         solution: "Cleaned and analyzed sales data using Excel, created pivot tables and dashboards, and generated insights to support data-driven decision-making.",
-        heroImage: "/images/sales-dashboard.png",
+        heroImage: "/Portfolio/images/sales-dashboard.png",
         screenshots:[
-            "/images/sales-chart1.png",
-            "/images/sales-chart2.png",
-            "/images/sales-chart3.png"
+            "/Portfolio/images/sales-chart1.png",
+            "/Portfolio/images/sales-chart2.png",
+            "/Portfolio/images/sales-chart3.png"
         ]
     },
 };
@@ -109,7 +109,7 @@ function ProjectDetail() {
                     <div className='project-section report-download-section'>
                         <h3>Project Documentation</h3>
                         <a 
-                        href='/reports/DA Project Report.pdf'
+                        href='/Portfolio/reports/DA-Project-Report.pdf'
                         target='_blank'
                         className='btn-primary'> View Full Analysis Report</a>
                     </div>
