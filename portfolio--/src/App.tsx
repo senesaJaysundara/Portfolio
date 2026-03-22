@@ -47,10 +47,10 @@ function App() {
         <span className="logo">Senesa</span>
 
         <nav className="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact" className="nav-cta">Contact</a>
+          <button onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>About</button>
+          <button onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>Projects</button>
+          <button onClick={() => document.getElementById('skills')?.scrollIntoView({behavior: 'smooth'})}>Skills</button>
+          <button className="nav-link-btn nav-cta" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>Contact</button>
         </nav>
       </div>
     </header>
@@ -63,8 +63,8 @@ function App() {
         <p className="hero-subtitle">Aspiring computer science student</p>
 
         <div className="hero-action">
-          <a href="#projects" className="btn primary">View Projects</a>
-          <a href="#contact" className="btn ghost">Contact</a>
+          <button className="btn primary" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>View Projects</button>
+          <button className="btn ghost" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>Contact</button>
         </div>
       </div>
 
