@@ -94,25 +94,25 @@ function App() {
           title='Kuddles'
           description='A mobile app connecting parents and nannies'
           slug='kuddles'
-          image='/images/Kuddles.jpg'/>
+          image='images/Kuddles.jpg'/>
           
           <ProjectCard
           title='CityNest'
           description='A web app for searching and filtering properties'
           slug='CityNest'
-          image='/images/citynest.png'/>
+          image='images/citynest.png'/>
 
           <ProjectCard
           title='Good Health and Well-being'
           description='A website about the UN SDGS goal "Good Health and Well-being" to promote about health communities and healthy lifecycle'
           slug='GoodHealthandWellbeing'
-          image='/images/good-health.png'/>
+          image='images/good-health.png'/>
 
           <ProjectCard
           title='Sales Data Analysis'
           description='Analysing sales data using Excel to uncover trends and business insights'
           slug='SalesAnalytics'
-          image='/images/sales-dashboard.png'/> 
+          image='images/sales-dashboard.png'/> 
       </div>
       </div>
     </section>
