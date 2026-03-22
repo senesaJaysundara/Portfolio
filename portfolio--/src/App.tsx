@@ -47,9 +47,9 @@ function App() {
         <span className="logo">Senesa</span>
 
         <nav className="nav-links">
-          <button onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>About</button>
-          <button onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>Projects</button>
-          <button onClick={() => document.getElementById('skills')?.scrollIntoView({behavior: 'smooth'})}>Skills</button>
+          <button className='nav-link-btn' onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>About</button>
+          <button className='nav-link-btn'  onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>Projects</button>
+          <button className='nav-link-btn'  onClick={() => document.getElementById('skills')?.scrollIntoView({behavior: 'smooth'})}>Skills</button>
           <button className="nav-link-btn nav-cta" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>Contact</button>
         </nav>
       </div>
