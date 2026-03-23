@@ -58,7 +58,7 @@
   padding: 0;
 }
 .nav-links a:has(.nav-cta)::after{
-  display: none;
+  display: none !important;
 }
 .nav-links a{
   font-size: 0.95rem; 
@@ -88,22 +88,29 @@
 .nav-cta{
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   background: var(--primary);
   color: #030712 !important;
-  padding: 0.6rem 1.4rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 8px;
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  line-height: 1;
+  line-height: 1.2;
   text-decoration: none;
+  border: 1px solid transparent;
 }
 .nav-cta:hover{
   background: var(--primary-soft);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--accent-glow);
+  transform: translateY(-2px);
+  color: #000 !important;
+  box-shadow: 0 5px 15px var(--accent-glow);
+}
+.nav-links a:has(.nav-cta){
+  display: flex;
+  align-items: center;
 }
 .nav-links a .nav-cta{
   display: flex;
@@ -111,6 +118,22 @@
   height: 100%;
   line-height: 1;
 }
+.hamburger{
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 10px;
+}
+.hamburger .bar{
+  width: 25px;
+  height: 2px;
+  background-color: var(--primary);
+  transition: all 0.3s ease;
+}
+
 .loader-screen{
   position: fixed;
   top: 0;
@@ -812,5 +835,52 @@ html{
   }
   .project-detail h1{
     font-size: 2.2rem;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Animate to X when active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen */
+    width: 70%;
+    height: 100vh;
+    background: rgba(3, 7, 18, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem !important;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 1px solid rgba(56, 189, 248, 0.1);
+  }
+
+  .nav-links.open {
+    right: 0; /* Slide in */
+  }
+
+  .nav-link-btn {
+    font-size: 1.2rem; /* Make links larger for thumb-tapping */
+  }
+  
+  /* Prevent the underline effect from looking weird on mobile */
+  .nav-link-btn::after {
+    bottom: -10px;
   }
 }

@@ -7,6 +7,13 @@ import "./App.css"
 function App() {
   const [showBtn, setShowBtn] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  //close menu when a link is clicked
+  const handleNavClick = (id) =>{
+    setIsMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({behavior: 'smooth'});
+  };
 
   useEffect(()=>{
     const handleScroll = () => {
@@ -46,11 +53,21 @@ function App() {
       <div className="nav-container">
         <span className="logo">Senesa</span>
 
-        <nav className="nav-links">
-          <button className='nav-link-btn' onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>About</button>
-          <button className='nav-link-btn'  onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>Projects</button>
-          <button className='nav-link-btn'  onClick={() => document.getElementById('skills')?.scrollIntoView({behavior: 'smooth'})}>Skills</button>
-          <button className="nav-link-btn nav-cta" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>Contact</button>
+        {/*Hamburger Icon*/}
+        <button
+        className={`hamburger ${isMenuOpen ? 'active':''}`}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className='bar'></span>
+          <span className='bar'></span>
+          <span className='bar'></span>
+        </button>
+
+        <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <button className='nav-link-btn' onClick={() => handleNavClick('about')}>About</button>
+          <button className='nav-link-btn'  onClick={() => handleNavClick('projects')}>Projects</button>
+          <button className='nav-link-btn'  onClick={() => handleNavClick('skills')}>Skills</button>
+          <button className="nav-link-btn nav-cta" onClick={() => handleNavClick('contact')}>Contact</button>
         </nav>
       </div>
     </header>
@@ -60,7 +77,7 @@ function App() {
       <div className="container hero-layout">
         <span className="hero-greeting">Hello, I'm</span>
         <h1 className="hero-name">Senesa <br/> Jayasundara</h1>
-        <p className="hero-subtitle">Aspiring computer science student</p>
+        {/*<p className="hero-subtitle">Aspiring computer science student</p>*/}
 
         <div className="hero-action">
           <button className="btn primary" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>View Projects</button>
@@ -81,7 +98,10 @@ function App() {
     <section className="about" id="about">
       <div className="container about-grid">
         <h2 className="section-title">About</h2>
-        <p>I'm a computer science student who has an interest in building clean and responsive interfaces and web applications. Also in data analysis which I learn everyday by myself</p>
+        <p>A Computer Science student passionate about designing clean, responsive web interfaces and user experiences.
+        <br/><br/>
+        Also explore data analytics and continuously develop skills to build impactful and meaningful digital solutions.
+        </p>
       </div>
     </section>
 
