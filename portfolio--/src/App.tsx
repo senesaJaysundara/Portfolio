@@ -10,7 +10,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   //close menu when a link is clicked
-  const handleNavClick = (id) =>{
+  const handleNavClick = (id: string) =>{
     setIsMenuOpen(false);
     document.getElementById(id)?.scrollIntoView({behavior: 'smooth'});
   };
@@ -77,11 +77,10 @@ function App() {
       <div className="container hero-layout">
         <span className="hero-greeting">Hello, I'm</span>
         <h1 className="hero-name">Senesa <br/> Jayasundara</h1>
-        {/*<p className="hero-subtitle">Aspiring computer science student</p>*/}
 
         <div className="hero-action">
-          <button className="btn primary" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>View Projects</button>
-          <button className="btn ghost" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>Contact</button>
+          <button className="btn primary" onClick={() => handleNavClick('projects')}>View Projects</button>
+          <button className="btn ghost" onClick={() => handleNavClick('contact')}>Contact</button>
         </div>
       </div>
 
